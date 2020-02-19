@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mafia II: Toolkit</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+								</a> -->
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+					<!-- Menu -->
+					<nav id="menu">
+							<h2 class="sidetext">Menu</h2>
+							<ul class="sidetext">
+								<li><a href="../index.html">Home</a></li>
+								<li>C++</li>
+									<ul>
+										<li><a href="snakegame.html">SDL Snake Game</a></li>
+										<li><a href="bubblegame.html">Space Bubble Shooter</a></li>
+								    <li><a href="urhoboids.html">Urho3D Boids</a></li>
+										<li><a href="hotreloading.html">C++ Hot Reloading</a></li>
+									<!--	<li><a href="#">Where's Wally?</a></li> -->
+									</ul>
+								<li>Unity/C#</li>
+									<ul>
+										<li><a href="spacegame.html">Untitled Space Shooter</a></li>
+										<li><a href="procedural.html">Procedural Content Generation</a></li>
+									<!--	<li><a href="#">Virtual Reality Project</a></li> -->
+									</ul>
+								<li>Uncategorised (Use multiple languages.)</li>
+									<ul>
+										<li><a href="mtoolkit.html">Mafia II: Toolkit</a></li>
+										<li><a href="skyblivion.html">Skyblivion</a></li>
+										<li><a href="smaller.html">Smaller Projects</a></li>
+										<!--<li><a href="#">SigEngine Research</a></li>-->
+									</ul>
+							</ul>
+						</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Mafia II: Toolkit</h1>
+							<span class="image main">
+								<div class="slideshow-container">
+									<!-- Full-width images with number and caption text -->
+									<div class="mySlides fade">
+										<div class="numbertext">1 / 5</div>
+										<img src="../images/mtoolkit/Port01.png" style="width:100%">
+										<div class="text">The city port models loaded into the map editor.</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">2 / 5</div>
+										<img src="../images/mtoolkit/Port02.png" style="width:100%">
+										<div class="text">The port again, but this time visualising the collisions.</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">3 / 5</div>
+										<img src="../images/mtoolkit/Table01.png" style="width:100%">
+										<div class="text">An example of another editor for Mafia II.</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">3 / 5</div>
+										<img src="../images/mtoolkit/Car01.png" style="width:100%">
+										<div class="text">Skinned Car development.</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">4 / 5</div>
+										<img src="../images/mtoolkit/gta01.png" style="width:100%">
+										<div class="text">Liberty City from GTA III.</div>
+									</div>
+
+									<!-- Next and previous buttons -->
+									<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+									<a class="next" onclick="plusSlides(1)">&#10095;</a>
+								</div>
+								<br>
+
+								<!-- The dots/circles -->
+								<div style="text-align:center">
+									<span class="dot" onclick="currentSlide(1)"></span>
+									<span class="dot" onclick="currentSlide(2)"></span>
+									<span class="dot" onclick="currentSlide(3)"></span>
+									<span class="dot" onclick="currentSlide(4)"></span>
+									<span class="dot" onclick="currentSlide(5)"></span>
+								</div>
+							</span>
+							<!-- Intro -->
+							<h2>Overview</h2>
+							<p>This project started in 2018 with the aim of achieving improved modding capabilities for a game called Mafia II, which was developed by 2k Czech and the project is writtem in C# and C++. Back in 2018, the modding abilities for this game was limited. Modders were able to modify game archives and replace resources like textures and sounds, and add custom cars by using a paid program called ZModeler3. By the end of 2018, this project had the ability to modify game archives, new tools which had more functionality than existing tools published, and had a very limited map editing tool which enabled the importing/exporting of custom assets and collisions. </p>
+							<p>In 2019, I focused on learning graphics, and developed a renderer using DirectX11.  Throughout the development of these tools, I have developed an understanding and the ability to reverse engineer file formats, and use SDKs and middleware to implement improved modding support, build sophisticated tools, a pipeline for converting models, and a renderer using DirectX11, and built a custom pipeline to help modders import custom models into the game, using the Fbx SDK. These custom models can also be imported as collisions, which uses the PhysX SDK (2.8) to cook the model ready for the game. Furthermore, modders are now able to add new interiors and cities into the game using the Toolkit, and populate the city with instanced models due to the recently reversed "Translokator" format - this file essentially populates the world by adding instances of objects to a large spatial grid, ready for rendering. Finally, the "RoadMap" file, which contains the games traffic system, was also reversed but cannot be edited due to the lack of knowledge.</p>
+							<p>For 2020, I aim to improve the renderer and begin on reversing more unknown formats, such as the files which contain cutscenes and animation data, research on how the traffic system is deserialized, learning the AI middleware named "Kynapse", potentially porting to WPF, and work on refactoring the older areas of the codebase.</p>
+
+							<!-- Brief intro to modelling stuff -->
+							<p>Before the pipline for models was established, another idea was to develop a plugin for both 3DS Max and Blender. For 3DS Max, a plugin was developed using the SDK - it managed to import areas of the map but this idea was scrapped because of the desire to keep a wide amount of accessibility and avoiding limiting modding to just one version of a modelling package.</p>
+
+							<!-- features -->
+							<h2>Current State</h2>
+							<p>(As of January, 2020)</p>
+							<div class="col-6 col-12-medium">
+								<ul>
+									<li>Map Editor powered by DirectX11.</li>
+									<li>Pipeline which allows modders to export models to Fbx, and back again.</li>
+									<li>Generate cooked data for PhysX models, using the PhysX SDK.</li>
+									<li>Work in Progress Traffic Editor.</li>
+									<li>Game Archive Management.</li>
+									<li>The creation of new interiors.</li>
+									<li>More minor programs for editing data such as: tables, materials, speech and more.</li>
+								</ul>
+							</div>
+							<h2>Developed Skills</h2>
+							<ul>
+								<li>Good understanding of both C++ and C#</li>
+								<li>Graphics Rendering: Utilised SharpDX to develop a Dx11 renderer, for the map editor.</li>
+								<li>Reverse Engineering: Developed an understanding of binary serialization, resulting in datatypes such as 'RoadMap' file which stores traffic navigation.</li>
+								<li>Tool Development: Using C# and WinForms/WPF, tools have been developed to modify many of the games file formats.</li>
+								<li>Acting Upon Feedback: The community feedback is used to improve usability and functionality of the tools.</li>
+								<li>Batch Conversion: Converting other maps to Mafia II using this program.</li>
+								<li>Model Pipeline: Developed a pipeline to give modders the ability to convert models from the engines format to FBX, and back again.</li>
+								<li>Dedication: I have been the sole developer on this project for almost two years.</li>
+							</ul>
+							<!-- Final paragraph -->
+							<p>This project can be found on my GitHub, which can be found below. More information can be found on the GitHub page, albeit rather outdated.</p>
+							<section>
+								<h2>Links</h2>
+								<ul class="icons">
+									<li><a href="https://github.com/Greavesy1899/Mafia2Toolkit/releases/" class="button primary icon solid fa-download">Download</a></li>
+									<li><a href="https://github.com/Greavesy1899/Mafia2Toolkit" class="button primary icon brands fa-github">GitHub</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<!--<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section> -->
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://twitter.com/Greavesy1899" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<!--<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>-->
+									<li><a href="https://github.com/Greavesy1899" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<!--<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>-->
+									<li><a href="mailto:connor.greaves1999@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+									<li><a href="https://www.linkedin.com/in/connor-greaves-8816911a0/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Connor Greaves (2020). All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script src="../assets/js/slideshow.js"></script>
+	</body>
+</html>

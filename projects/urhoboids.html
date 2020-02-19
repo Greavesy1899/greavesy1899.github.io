@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Urho3D: Boids</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+								</a> -->
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+					<!-- Menu -->
+          <nav id="menu">
+              <h2 class="sidetext">Menu</h2>
+              <ul class="sidetext">
+                <li><a href="../index.html">Home</a></li>
+                <li>C++</li>
+                  <ul>
+                    <li><a href="snakegame.html">SDL Snake Game</a></li>
+                    <li><a href="bubblegame.html">Space Bubble Shooter</a></li>
+                    <li><a href="urhoboids.html">Urho3D Boids</a></li>
+                    <li><a href="hotreloading.html">C++ Hot Reloading</a></li>
+                  <!--	<li><a href="#">Where's Wally?</a></li> -->
+                  </ul>
+                <li>Unity/C#</li>
+                  <ul>
+                    <li><a href="spacegame.html">Untitled Space Shooter</a></li>
+                    <li><a href="procedural.html">Procedural Content Generation</a></li>
+                  <!--	<li><a href="#">Virtual Reality Project</a></li> -->
+                  </ul>
+                <li>Uncategorised (Use multiple languages.)</li>
+                  <ul>
+                    <li><a href="mtoolkit.html">Mafia II: Toolkit</a></li>
+                    <li><a href="skyblivion.html">Skyblivion</a></li>
+                    <li><a href="smaller.html">Smaller Projects</a></li>
+                    <!--<li><a href="#">SigEngine Research</a></li>-->
+                  </ul>
+              </ul>
+            </nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Urho3D: Boids</h1>
+							<div class="slideshow-container">
+
+							  <!-- Full-width images with number and caption text -->
+								<div class="mySlides fade">
+									<div class="numbertext">1 / 7</div>
+									<iframe class="image main" width="1366" height="768" src="https://www.youtube.com/embed/HkeXwJxcN5o"></iframe>
+									<div class="text_black">A video showing of network features, turret gameplay and boids.</div>
+								</div>
+
+							  <div class="mySlides fade">
+							    <div class="numbertext">2 / 7</div>
+							    <img src="../images/urho/image0.png" style="width:100%">
+							    <div class="text">Boids on the 1 vs 1 map.</div>
+							  </div>
+
+							  <div class="mySlides fade">
+							    <div class="numbertext">3 / 7</div>
+							    <img src="../images/urho/image1.png" style="width:100%">
+							    <div class="text">Main Menu.</div>
+							  </div>
+
+							  <div class="mySlides fade">
+							    <div class="numbertext">4 / 7</div>
+							    <img src="../images/urho/image2.png" style="width:100%">
+							    <div class="text">Options menu which is serialized when changes are made, and deserialized on startup.</div>
+							  </div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">5 / 7</div>
+									<img src="../images/urho/image3.png" style="width:100%">
+									<div class="text">Simple level select menu.</div>
+								</div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">6 / 7</div>
+									<img src="../images/urho/image4.png" style="width:100%">
+									<div class="text">The player using one of their turrets.</div>
+								</div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">7 / 7</div>
+									<img src="../images/urho/image5.png" style="width:100%">
+									<div class="text">Overview of boids ingame.</div>
+								</div>
+
+							  <!-- Next and previous buttons -->
+							  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+							  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+							</div>
+							<br>
+
+							<!-- The dots/circles -->
+							<div style="text-align:center">
+							  <span class="dot" onclick="currentSlide(1)"></span>
+							  <span class="dot" onclick="currentSlide(2)"></span>
+							  <span class="dot" onclick="currentSlide(3)"></span>
+								<span class="dot" onclick="currentSlide(4)"></span>
+								<span class="dot" onclick="currentSlide(5)"></span>
+								<span class="dot" onclick="currentSlide(6)"></span>
+								<span class="dot" onclick="currentSlide(7)"></span>
+							</div>
+							<p>The aim for this project was to implement a simple boids algorithm and build a game which had some basic combat mechanics, as well as networking by using an engine called "Urho3D". The algorithm given was extremely slow and could only handle about 100-250 boids. The end result was very positive; the game could use about 2,5000 - 5,000 boids with an average of 30FPS.</p>
+							<p>When the program is computing forces for boids, the main issue is that the algorithm complexity would be quadratic; the original code would loop through all the boids twice in a single update function. When optimizing the boids, three improvements were made; The first was to implement a "Spatial Grid", which essentialy decreases the amount of boids which are used to calculate forces in nearby cells in the spatial grid. The final optimization was implementing multi-threading; this was a major boost to performance, and the boids were split depending on the amount of threads, as boids may fail to update before the update function is processed on the main thread and cause jittering effects on the boids.</p>
+							<p>During this assignment, I wanted to make it feel more like a game, so an extra level was added, a main menu, options with a working configuration file and a level select screen. For gameplay, I made a basic turret defense where players can take control of turrets and target the boids in the sky. These were done using Urho3D's componenet system, was transferring data over the network is really easy to do.</p>
+
+							<h2>Developed Skills</h2>
+							<ul>
+								<li>Developed experience using an existing codebase and use it develop a game.</li>
+								<li>Debugging and analysing optimisations such as spatial grids and threading.</li>
+								<li>Analysing optimisations with qualitative and quantitative terms in mind.</li>
+								<li>Further knowledge of C++.</li>
+							</ul>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+						<!--	<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section> -->
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://twitter.com/Greavesy1899" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<!--<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>-->
+									<li><a href="https://github.com/Greavesy1899" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<!--<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>-->
+									<li><a href="mailto:connor.greaves1999@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+									<li><a href="https://www.linkedin.com/in/connor-greaves-8816911a0/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Connor Greaves (2020). All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script src="../assets/js/slideshow.js"></script>
+	</body>
+</html>

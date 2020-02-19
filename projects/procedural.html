@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Procedural Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+								</a> -->
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+					<!-- Menu -->
+					<nav id="menu">
+							<h2 class="sidetext">Menu</h2>
+							<ul class="sidetext">
+								<li><a href="../index.html">Home</a></li>
+								<li>C++</li>
+									<ul>
+										<li><a href="snakegame.html">SDL Snake Game</a></li>
+										<li><a href="bubblegame.html">Space Bubble Shooter</a></li>
+									  <li><a href="urhoboids.html">Urho3D Boids</a></li>
+										<li><a href="hotreloading.html">C++ Hot Reloading</a></li>
+									<!--	<li><a href="#">Where's Wally?</a></li> -->
+									</ul>
+								<li>Unity/C#</li>
+									<ul>
+										<li><a href="spacegame.html">Untitled Space Shooter</a></li>
+										<li><a href="procedural.html">Procedural Content Generation</a></li>
+									<!--	<li><a href="#">Virtual Reality Project</a></li> -->
+									</ul>
+								<li>Uncategorised (Use multiple languages.)</li>
+									<ul>
+										<li><a href="mtoolkit.html">Mafia II: Toolkit</a></li>
+										<li><a href="skyblivion.html">Skyblivion</a></li>
+										<li><a href="smaller.html">Smaller Projects</a></li>
+										<!--<li><a href="#">SigEngine Research</a></li>-->
+									</ul>
+							</ul>
+						</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Procedural Project</h1>
+							<span class="image main">
+								<div class="slideshow-container">
+									<!-- Full-width images with number and caption text -->
+									<div class="mySlides fade">
+										<div class="numbertext">1 / 7</div>
+										<iframe class="image main" width="1366" height="768" src="https://www.youtube.com/embed/S1KfBVrfcKM"></iframe>
+										<div class="text"></div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">2 / 7</div>
+										<img src="../images/procedural/image2.png" style="width:100%">
+										<div class="text">Two cities surrounded by coral, with both cities using a different tunnel layout and buildings.</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">3 / 7</div>
+										<img src="../images/procedural/image1.png" style="width:100%">
+										<div class="text">Example of procedurally generated buildings and tunnel network for the city.</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">4 / 7</div>
+										<img src="../images/procedural/image3.png" style="width:100%">
+										<div class="text">The size of the diorama; without the fog enabled it looks quite bare; this is one of the future improvements.</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">5 / 7</div>
+										<img src="../images/procedural/image4.png" style="width:100%">
+										<div class="text">Scene for the building generator; Sub-system testing was a major factor in development.</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">6 / 7</div>
+										<img src="../images/procedural/image5.png" style="width:100%">
+										<div class="text">Another sub-system testing example: this was the scene for testing the generator of coral clusters.</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext_black">7 / 7</div>
+										<img src="../images/procedural/image6.png" style="width:100%">
+										<div class="text_black">Another sub-system testing example: the tunnel network for the settlements. They were specifically designed so they can attach to each other and enable merging.</div>
+									</div>
+
+									<!-- Next and previous buttons -->
+									<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+									<a class="next" onclick="plusSlides(1)">&#10095;</a>
+								</div>
+								<br>
+
+								<!-- The dots/circles -->
+								<div style="text-align:center">
+									<span class="dot" onclick="currentSlide(1)"></span>
+									<span class="dot" onclick="currentSlide(2)"></span>
+									<span class="dot" onclick="currentSlide(3)"></span>
+									<span class="dot" onclick="currentSlide(4)"></span>
+									<span class="dot" onclick="currentSlide(5)"></span>
+									<span class="dot" onclick="currentSlide(6)"></span>
+									<span class="dot" onclick="currentSlide(7)"></span>
+								</div>
+							</span>
+							<p>This project was done for a third year project during university. The objective was to create a procedurally generated diorama with it needing to fit a specific theme: 'The Beneath'. A lot of effort and time went into this project to achieve different types of procedural generation such as terrain, buildings and implementing two L-Systems (Lindenmayer system) for the settlement network and coral generation. Along with the diorama, another task was to create a report which included a diary, testing, evaluating algorithms and a short critique of the project.</p>
+							<p>The project focuses on an underwater diorama with cities and flora. The terrain is generated using 'Perlin Noise' and 'Multi-Fractal Noise', with the colouring of the terrain based of the height of every vertex on the terrain. Cities were achieved by having a complete procedural approach; the tunnel network uses an L-System which covers the entire terrain with the cities selecting points along the L-System to begin generation, and the buildings are generated based on a specific rule set, to make sure specific type of models are correctly positioned. Finally, the flora system was also achieved by using another L-System using the 'Dragon Curve' ruleset. For placing all of these generated objects, the diorama had an underlying grid; named 'The Utilization Map'. This map split the world up into cells, with any instantiated objects coverting the selected cell to avoid objects being placed in the same locations.</p>
+							<p>In the future, I plan to add life and some lighting into the diorama, by adding it to the cities, some fish life, and maybe a rare chance of submarines which follow splines, post processing effects to add more of an 'underwater' feeling, as well as improving the buildings to add more variety and fix any visible geometry issues.</p>
+							<h2>Developed Skills</h2>
+							<ul>
+								<li>Procedural Generation</li>
+								<li>General Unity Knowledge</li>
+								<li>Techniques to optimize PCG alogithms</li>
+								<li>Lindenmayer System</li>
+							</ul>
+							<section>
+								<h2>Links</h2>
+								<ul class="icons">
+									<li><a href="#" class="button primary icon solid fa-download">Download</a></li>
+									<li><a href="#" class="button primary icon brands fa-github">GitHub</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<!--<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>-->
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://twitter.com/Greavesy1899" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<!--<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>-->
+									<li><a href="https://github.com/Greavesy1899" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<!--<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>-->
+									<li><a href="mailto:connor.greaves1999@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+									<li><a href="https://www.linkedin.com/in/connor-greaves-8816911a0/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Connor Greaves (2020). All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script src="../assets/js/slideshow.js"></script>
+	</body>
+</html>
