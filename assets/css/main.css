@@ -2714,34 +2714,50 @@ input, select, textarea {
 
 			.tiles article.toolkit > .image:before {
 				background-image: url("../../images/toolkit.png");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
 			}
 
 			.tiles article.boids > .image:before {
 				background-image: url("../../images/boids.png");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
 			}
 
 			.tiles article.smaller > .image:before {
 				background-image: url("../../images/small_lib.png");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
 			}
 
 			.tiles article.snake > .image:before {
 				background-image: url("../../images/snake.png");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
 			}
 
 			.tiles article.space > .image:before {
 				background-image: url("../../images/space.png");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
 			}
 
 			.tiles article.skyblivion > .image:before {
 				background-image: url("../../images/skyblivion.png");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
 			}
 
 			.tiles article.procedural > .image:before {
 				background-image: url("../../images/pcg.png");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
 			}
 
 			.tiles article.bubble > .image:before {
 				background-image: url("../../images/bubble.png");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
 			}
 
 			body:not(.is-touch) .tiles article:hover > .image {
