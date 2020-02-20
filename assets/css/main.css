@@ -2361,12 +2361,14 @@ input, select, textarea {
 
 			.image.main img {
 				width: 100%;
+				min-height: 512px;
+				max-height: 768px;
 			}
 
 			.image.main iframe {
 				width: 100%;
-				min-height: 300px;
-				max-height: 1366px;
+				min-height: 512px;
+				max-height: 768px;
 			}
 
 			@media screen and (max-width: 736px) {
