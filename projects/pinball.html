@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Space Bubble Shooter</title>
+		<title>PhysX Powered Pinball Machine</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
@@ -20,6 +20,11 @@
 					<header id="header">
 						<div class="inner">
 
+							<!-- Logo
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+								</a> -->
+
 							<!-- Nav -->
 								<nav>
 									<ul>
@@ -30,8 +35,8 @@
 						</div>
 					</header>
 
-				<!-- Menu -->
-				<nav id="menu">
+					<!-- Menu -->
+					<nav id="menu">
 						<h2 class="sidetext">Menu</h2>
 						<ul class="sidetext">
 							<li><a href="../index.html">Home</a></li>
@@ -39,7 +44,7 @@
 								<ul>
 									<li><a href="snakegame.html">SDL Snake Game</a></li>
 									<li><a href="bubblegame.html">Space Bubble Shooter</a></li>
-								  	<li><a href="urhoboids.html">Urho3D Boids</a></li>
+								    <li><a href="urhoboids.html">Urho3D Boids</a></li>
 									<li><a href="hotreloading.html">C++ Hot Reloading</a></li>
 								<!--<li><a href="pinball.html">Pinball Machine</a></li> -->
 								<!--<li><a href="#">Where's Wally?</a></li> -->
@@ -48,35 +53,29 @@
 								<ul>
 									<li><a href="spacegame.html">Untitled Space Shooter</a></li>
 									<li><a href="procedural.html">Procedural Content Generation</a></li>
-								<!--<li><a href="#">Virtual Reality Project</a></li> -->
+								<!--	<li><a href="#">Virtual Reality Project</a></li> -->
 								</ul>
 							<li>Uncategorised (Use multiple languages.)</li>
 								<ul>
 									<li><a href="mtoolkit.html">Mafia II: Toolkit</a></li>
 									<li><a href="skyblivion.html">Skyblivion</a></li>
 									<li><a href="smaller.html">Smaller Projects</a></li>
-								<!--<li><a href="#">SigEngine Research</a></li>-->
+									<!--<li><a href="#">SigEngine Research</a></li>-->
 								</ul>
 						</ul>
 					</nav>
 
-					<!-- Main -->
+				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Space Bubble Shooter</h1>
+							<h1>PhysX Powered Pinball Machine</h1>
 							<span class="image main">
 								<div class="slideshow-container">
 									<!-- Full-width images with number and caption text -->
 									<div class="mySlides fade">
-										<div class="numbertext">1 / 2</div>
-										<iframe class="image main" height="640" src="https://www.youtube.com/embed/blr9gV8aCO0"></iframe>
-										<div class="text"></div>
-									</div>
-
-									<div class="mySlides fade">
-										<div class="numbertext">2 / 2</div>
-										<iframe class="image main" height="640" src="https://www.youtube.com/embed/3Ugy5ZSMxGQ"></iframe>
-										<div class="text"></div>
+										<div class="numbertext">1 / 1</div>
+										<img src="../images/procedural/image2.png" style="width:100%">
+										<div class="text">Two cities surrounded by coral, with both cities using a different tunnel layout and buildings.</div>
 									</div>
 
 									<!-- Next and previous buttons -->
@@ -88,39 +87,20 @@
 								<!-- The dots/circles -->
 								<div style="text-align:center">
 									<span class="dot" onclick="currentSlide(1)"></span>
-									<span class="dot" onclick="currentSlide(2)"></span>
 								</div>
 							</span>
-							<p>This game was done for the Graphics module. Instead of using the SDL library for rendering, it was replaced with OpenGL. The goal for was to build an "Asteroid" clone, with bubbles rather than asteroids. The game engine which was used to build snake was also used for this project, with further implementations including shaders, models and lighting. For me, this was more of a learning curve for shaders and lighting, some futher improving some elements such as collision detection which now includes the ability to check if circles are colliding, (later spheres in the 3D version). The first part of the assignment required this game to be 2D, with a basic projectile system, a level with a boundary and finally, bubbles. The latter part of the assignment required this to be transformed to 3D, with more advanced shading features such as a skybox and lighting.</p>
-							<!-- Features list -->
-							<h2>Features:</h2>
-							<div class="col-6 col-12-medium">
-								<ul>
-									<li>One level.</li>
-									<li>A ship which can be maneuvered and shoot.</li>
-									<li>Point lighting which can be created with custom colours.</li>
-									<li>Skybox utilising a Cube Map.</li>
-									<li>Texture Manager, which is stored in an XML.</li>
-									<li>OBJ Format importer.</li>
-									<li>Bubbles with transparency.</li>
-								</ul>
-							</div>
-							<h2>Developed Skills:</h2>
-							<div class="col-6 col-12-medium">
+							<p>This pinball machine was developed for a University module named 'Physics Simulation'. The goal was to develop a pinball machine using a provided codebase and PhysX. By using PhysX, the idea was to implement key components of a pinball machine such as the plunger and the paddles, in a realistic fashion. 
+								The lecturers gave us a codebase which required quite a large amount of refactoring; originally, classes were packed into header files with little to no organisation and thus, provided me with the challenge of proving my 'refactoring' abilities. Not only did I display my 'refactoring' abilities, I also 
+								managed to find a bug and fix it - this was hidden deep in the codebase which went unnoticed for years.</p>
+							<p>To further improve my simulation, rather than using the provided code classes such as the box, spheres or capsules to build the machine, I implemented my own object importer to provide the ability to build my own machine in Blender. This allowed me to import custom Wavefront .OBJ files and 'cook' them ready for PhysX. As well as having basic support for this,
+								I went a step further to provide material indices for PhysX; during the development of this system I noticed the bug and went onto fix it. As well as finding ways to improve functionality, I also searched the API for certain joints such as the PxD6Joint, and other functionality like Continous Collision Detection (CCD).</p>
+							<h2>Developed Skills</h2>
 							<ul>
-								<li>Developed knowledge of C++.</li>
-								<li>Developed knowledge of OpenGL and shaders.</li>
-								<li>Developed an existing codebase to implement more libraries.</li>
+								<li>Better Knowledge of the PhysX SDK.</li>
+								<li>Improved my skills in using and refactoring existing codebases.</li>
+								<li>Improved my skills in general research, such as looking for documentation in the API.</li>
+								<li>Developed an understanding of certain techniques such as CCD.</li>
 							</ul>
-						</div>
-							<p>This project vastly improved my knowledge of shaders and made me definiately consider to implement OpenGL into the SDL snake game. The codebase is available on GitHub, seen below. The download is currently not available.</p>
-							<section>
-								<h2>Links</h2>
-								<ul class="icons">
-									<li><a href="https://github.com/Greavesy1899/Space-Bubble-Shooter" class="button primary icon solid fa-download">Download</a></li>
-									<li><a href="https://github.com/Greavesy1899/Space-Bubble-Shooter" class="button primary icon brands fa-github">GitHub</a></li>
-								</ul>
-							</section>
 						</div>
 					</div>
 
