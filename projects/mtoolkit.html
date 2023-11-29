@@ -15,68 +15,29 @@
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper">
-
 				<!-- Header -->
 					<header id="header">
 						<div class="inner">
-
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-
+							<!-- Empty -->
 						</div>
 					</header>
-
-					<!-- Menu -->
-					<nav id="menu">
-							<h2 class="sidetext">Menu</h2>
-							<ul class="sidetext">
-								<li><a href="../index.html">Home</a></li>
-								<li>C++</li>
-									<ul>
-										<li><a href="snakegame.html">SDL Snake Game</a></li>
-										<li><a href="bubblegame.html">Space Bubble Shooter</a></li>
-								    	<li><a href="urhoboids.html">Urho3D Boids</a></li>
-										<li><a href="hotreloading.html">C++ Hot Reloading</a></li>
-									<!--<li><a href="pinball.html">Pinball Machine</a></li> -->
-									<!--<li><a href="#">Where's Wally?</a></li> -->
-									</ul>
-								<li>Unity/C#</li>
-									<ul>
-										<li><a href="spacegame.html">Untitled Space Shooter</a></li>
-										<li><a href="procedural.html">Procedural Content Generation</a></li>
-									<!--	<li><a href="#">Virtual Reality Project</a></li> -->
-									</ul>
-								<li>Uncategorised (Use multiple languages.)</li>
-									<ul>
-										<li><a href="mtoolkit.html">Mafia II: Toolkit</a></li>
-										<li><a href="skyblivion.html">Skyblivion</a></li>
-										<li><a href="smaller.html">Smaller Projects</a></li>
-										<!--<li><a href="#">SigEngine Research</a></li>-->
-									</ul>
-							</ul>
-						</nav>
-
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Mafia II: Toolkit</h1>
+							<h1>Mafia: Toolkit</h1>
 							<span class="image main">
 								<div class="slideshow-container">
 									<!-- Full-width images with number and caption text -->
 									<div class="mySlides fade">
 										<div class="numbertext">1 / 5</div>
 										<img src="../images/mtoolkit/Port01.png" style="width:100%">
-										<div class="text">The city port models loaded into the map editor.</div>
+										<div class="text">A portion of game assets loaded into the map editor.</div>
 									</div>
 
 									<div class="mySlides fade">
 										<div class="numbertext">2 / 5</div>
 										<img src="../images/mtoolkit/Port02.png" style="width:100%">
-										<div class="text">The port again, but this time visualising the collisions.</div>
+										<div class="text">The same area, visualising collisions.</div>
 									</div>
 
 									<div class="mySlides fade">
@@ -114,24 +75,21 @@
 							</span>
 							<!-- Intro -->
 							<h2>Overview</h2>
-							<p>This project started in 2018 with the aim of achieving improved modding capabilities for a game called Mafia II, which was developed by 2k Czech. The tools are written in C# or C++, depending on the requirements of certain aspects of functionality. Back in 2018, the modding abilities for this game was limited. Modders were able to modify game archives and replace resources like textures and sounds, and add custom cars by using a paid program called ZModeler3. By the end of 2018, this project had the ability to modify game archives, new tools which had more functionality than existing tools published, and had a very limited map editing tool which enabled the importing/exporting of custom assets and collisions. </p>
-							<p>In 2019, I focused on learning graphics and subsequently developed a renderer using DirectX11, by using SharpDX.  Throughout the development of these tools, I have developed an understanding and the ability to reverse engineer file formats, and use APIs and middleware to implement improved modding support, build sophisticated tools, a renderer using DirectX11, and built a custom pipeline to help modders import custom models into the game using the Fbx SDK, which worked with most modelling packages, such as 3DS Max and Blender. These custom models can also be imported as collisions, which uses the PhysX SDK (2.8) to cook the model ready for the game. Furthermore, modders are now able to add new interiors and cities into the game using the Toolkit, and populate the city with instanced models due to the recently reversed "Translokator" format - this file essentially populates the world by adding instances of objects to a large spatial grid, ready for rendering. Finally, the "RoadMap" file, which contains the games traffic system, was also reversed but cannot be edited due to the lack of knowledge.</p>
-							<p>For 2020, I aim to improve the renderer and begin on reversing more unknown formats, such as the files which contain cutscenes and animation data, research on how the traffic system is deserialized, learning the AI middleware named "Kynapse", potentially porting to WPF, and work on refactoring the older areas of the codebase.</p>
+							<p>This project was initially started in 2018 with the aim of achieving improved modding capabilities for the 'Mafia' series, which was developed by 2k Czech and Hangar 13. The tools were written in C# or C++, depending on the functionality. Back in 2018, the modding abilities for this game was limited. Modders were able to modify game archives and replace game assets such as textures or sounds. By the end of 2018, this tool had the ability to modify game archives, and had a very limited map editing tool which enabled the importing/exporting of custom assets and collisions.</p>
+							<p>In 2019, I focused on learning graphics and subsequently developed a renderer using DirectX11, by using SharpDX. Throughout the development of these tools, I further developed an understanding and the ability to reverse engineer file formats; as well as using APIs and Middleware to develop a custom pipeline to assist other developers to import user-generated content into the game. This pipeline uses FbxSDK and PhysX SDK (2.8.3) with multiple modeling packages in mind, such as 3ds Max, Blender and Maya. The way the pipeline works is by exporting the game asset out of the modelling package as an FBX, The Toolkit will then utilise FbxSDK to then serialize the asset into a format the game can deserialize. With the introduction of this pipeline, it has provided a new ability to create custom content such as cities and interiors.</p>
+							<p>Between 2020 and 2023, the Toolkit started to support other games within the Mafia franchise, such as Mafia: Definition Edition and Mafia III: Definition Edition. While this program is no longer in active development, it still receives frequent updates to fix the most reported community issues. Now, the aim is to eventually develop a 're-imagined' tool using the new Cauldron modding framework, to further improve the quality of the tools available.</p>
 
 							<!-- Brief intro to modelling stuff -->
 							<p>Before the pipline for models was established, another idea was to develop a plugin for both 3DS Max and Blender. For 3DS Max, a plugin was developed using the SDK - it managed to import areas of the map but this idea was scrapped because of the desire to keep a wide amount of accessibility and avoiding limiting modding to just one version of a modelling package.</p>
 
 							<!-- features -->
 							<h2>Current State</h2>
-							<p>(As of January, 2020)</p>
+							<p>(As of November, 2023)</p>
 							<div class="col-6 col-12-medium">
 								<ul>
 									<li>Map Editor powered by DirectX11/SharpDX.</li>
-									<li>Pipeline which allows 3D artists to export and import models from and into the game.</li>
-									<li>Communicate with the PhysX API to "cook" custom built collisions.</li>
-									<li>Work in Progress Traffic Editor.</li>
-									<li>Game Archive Manager, such as unpacking, packing and functions to optimize the file order in the archive.</li>
-									<li>The creation of new interiors.</li>
+									<li>A Pipeline which provides the ability to convert FBX assets (using FbxSDK) to game-ready assets.</li>
+									<li>Utilising the PhysX library to generate more 'complete' collisions, further improving the quality of user-generated assets.</li>
 									<li>More minor programs for editing proprietary data such as: tables, materials, speech and more.</li>
 								</ul>
 							</div>
@@ -139,12 +97,11 @@
 							<ul>
 								<li>Good understanding of both C++ and C#</li>
 								<li>Graphics Rendering: Utilised SharpDX to develop a Dx11 renderer, for the map editor.</li>
-								<li>Reverse Engineering: Developed an understanding of binary serialization, resulting in datatypes such as 'RoadMap' file which stores traffic navigation, viewable by users.</li>
-								<li>Tool Development: Using C# and WinForms/WPF, tools have been developed to modify many of the games file formats.</li>
-								<li>Acting Upon Feedback: The community feedback is used to improve usability and functionality of the tools.</li>
-								<li>Batch Conversion: Converting other maps to Mafia II using this program.</li>
-								<li>Model Pipeline: Developed a pipeline to give 3d artists the ability to convert models from the engines format to FBX, and back again.</li>
-								<li>Dedication: I have been the sole developer on this project for almost two years.</li>
+								<li>Reverse Engineering: Developed an understanding of proprietary binary formats and produced individual tools (compiled into the Toolkit).</li>
+								<li>Tool Development: Using C# and WinForms/WPF, many tools have been developed to adjust the majority of the game assets.</li>
+								<li>Communication: Constantly communicating with members of the Community to address issues, listen to feedback and produce further updates to generally improve the quality of the Software.</li>
+								<li>Asset Pipeline: Developed an 'interchangeable' Asset Pipeline with the ability to convert game-ready formats to FBX thus allowing users to modify the content in Modelling Packages such as 3DS Max, Blender and Maya.</li>
+								<li>Dedication: Was the sole developer of this project for almost 5 years.</li>
 							</ul>
 							<!-- Final paragraph -->
 							<p>This project can be found on my GitHub, which can be found below. More information can be found on the GitHub page, albeit rather outdated.</p>
@@ -169,7 +126,7 @@
 								</ul>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Connor Greaves (2021). All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Connor Greaves (2023). All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>
